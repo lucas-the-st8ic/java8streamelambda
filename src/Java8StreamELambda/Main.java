@@ -1,7 +1,7 @@
 package Java8StreamELambda;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Main {
     static void main(String[] args) {
@@ -35,9 +35,44 @@ public class Main {
                 .filter(e -> e % 2 == 0)
                 .forEach(System.out::println);*/
 
-        System.out.println("==============");
+/*        System.out.println("==============");
         lista.stream()
                 .map(n -> n * 2)
                 .forEach(System.out::println);
+
+
+        System.out.println("==============");
+        long count = lista.stream()
+                .filter(e -> e % 2 == 0)
+                .count();
+        System.out.println(count);
+
+        System.out.println("==============");
+        Optional<Integer> min = lista.stream()
+                .filter(e -> e % 2 == 0)
+                .min(Comparator.naturalOrder());
+
+        System.out.println(min.get());
+
+        System.out.println("==============");
+        Optional<Integer> max = lista.stream()
+                .filter(e -> e % 2 == 0)
+                .max(Comparator.naturalOrder());
+
+        System.out.println(max.get());*/
+
+        System.out.println("==============");
+        List<Integer> novaLista = lista.stream()
+                .filter(x -> x % 2 == 0)
+                .toList();
+
+        System.out.println(novaLista);
+
+        System.out.println("==============");
+        Map<Boolean, List<Integer>> novalista2 = lista.stream()
+                .map(e -> e * 3)
+                .collect(Collectors.groupingBy(e -> e % 2 == 0));
+
+        System.out.println(novalista2);
     }
 }
