@@ -61,7 +61,7 @@ public class Main {
 
         System.out.println(max.get());*/
 
-        System.out.println("==============");
+ /*       System.out.println("==============");
         List<Integer> novaLista = lista.stream()
                 .filter(x -> x % 2 == 0)
                 .toList();
@@ -69,10 +69,17 @@ public class Main {
         System.out.println(novaLista);
 
         System.out.println("==============");
-        Map<Boolean, List<Integer>> novalista2 = lista.stream()
-                .map(e -> e * 3)
-                .collect(Collectors.groupingBy(e -> e % 2 == 0));
+        Map<Integer, List<Integer>> novalista2 = lista.stream()
+                .collect(Collectors.groupingBy(e -> e % 3));
 
-        System.out.println(novalista2);
+        System.out.println(novalista2);*/
+
+        System.out.println("==============");
+        String collects = lista.stream()
+                .map(e -> String.valueOf(e))
+                .collect(Collectors.joining());
+
+        System.out.println(collects);
+
     }
 }
