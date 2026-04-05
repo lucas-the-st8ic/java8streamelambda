@@ -1,4 +1,4 @@
-package Java8StreamELambda;
+package Java8StreamELambda.main;
 
 import java.util.*;
 import java.util.stream.Collectors;
